@@ -4,7 +4,7 @@ Bundler.setup
 
 require 'rails'
 require 'combustion'
-require 'nestive'
+require 'nestive_rendering'
 
 Combustion.initialize! :action_controller
 

@@ -1,10 +1,10 @@
 # encoding: utf-8
 
-module Nestive
+module NestiveRendering
   class Railtie < Rails::Railtie
-    initializer 'nestive.initialize' do
+    initializer 'nestive_rendering.initialize' do
       ActiveSupport.on_load(:action_view) do
-        include Nestive::LayoutHelper
+        include NestiveRendering::LayoutHelper
       end
     end
   end

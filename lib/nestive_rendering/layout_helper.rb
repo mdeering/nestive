@@ -1,6 +1,6 @@
-module Nestive
+module NestiveRendering
 
-  # The Nestive LayoutHelper provides a handful of helper methods for use in your layouts and views.
+  # The Nestive Rendering LayoutHelper provides a handful of helper methods for use in your layouts and views.
   #
   # See the documentation for each individual method for detailed information, but at a high level,
   # your parent layouts define `area`s of content. You can define an area and optionally add content
@@ -114,7 +114,7 @@ module Nestive
     # Defines an area of content in your layout that can be modified or replaced by child layouts
     # that extend it. You can optionally add content to an area using either a String, or a block.
     #
-    # Areas are declared in a parent layout and modified by a child layout, but since Nestive
+    # Areas are declared in a parent layout and modified by a child layout, but since Nestive Rendering
     # allows for multiple levels of inheritance, a child layout can also declare an area for it's
     # children to modify.
     #

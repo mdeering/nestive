@@ -1,8 +1,9 @@
-# Nestive [![Build Status](https://travis-ci.org/rwz/nestive.png)](https://travis-ci.org/rwz/nestive) [![Code Climate](https://codeclimate.com/github/rwz/nestive.png)](https://codeclimate.com/github/rwz/nestive)
-## A Nested Inheritable Layouts Helpers for Rails
+# Nestive Rendering [![Build Status](https://travis-ci.org/mdeering/nestive_rendering.png)](https://travis-ci.org/mdeering/nestive_rendering) [![Code Climate](https://codeclimate.com/github/mdeering/nestive_rendering.png)](https://codeclimate.com/github/mdeering/nestive_rendering)
+## A Nested Inheritable Layouts and Partial Helpers for Rails
 
+## Forked from [Nestive](https://github.com/rwz/nestive) to add option passing and the ability to extend partials.
 
-Nestive adds powerful layout and view helpers to your Rails app. It's similar
+Nestive Rendering adds powerful layout, template and partial view helpers to your Rails app. It's similar
 to the nested layout technique [already documented in the Rails
 guides](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts)
 and found in many other nested layout plugins (a technique using `content_for`
@@ -15,7 +16,7 @@ bunch of problems with this technique, including:
   *prepends* new content to the buffer, because each parent layout is rendered
   *after* it's child
 
-Nestive is *better* because it addresses these problems.
+Nestive Rendering is *better* because it addresses these problems.
 
 ## Just seven methods (so far)
 
