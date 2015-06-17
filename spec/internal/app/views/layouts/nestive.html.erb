@@ -10,6 +10,12 @@
         Some content
       <%- end -%>
     </div>
+
+    <div id="another-area">
+      <%= area :area_to_be_replaced do -%>
+        <%= DummyClass.content %>
+      <%- end -%>
+    </div>
     <div id="empty-area"><%= area :empty_area %></div>
   </body>
 </html>
