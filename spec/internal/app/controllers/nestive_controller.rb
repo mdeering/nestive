@@ -15,3 +15,9 @@ class NestiveController < ApplicationController
     render layout: 'locals'
   end
 end
+
+class DummyClass
+  def self.content
+    'dummy content'
+  end
+end

@@ -142,7 +142,7 @@ module NestiveRendering
     # @param [String] content
     #   An optional String of content to add to the area as you declare it.
     def area(name, content=nil, &block)
-      content = capture(&block) if block_given?
+      content = -> { capture(&block) } if block_given?
       append name, content
       render_area name
     end
@@ -164,7 +164,7 @@ module NestiveRendering
     # @param [String] content
     #   Optionally provide a String of content, instead of a block. A block will take precedence.
     def append(name, content=nil, &block)
-      content = capture(&block) if block_given?
+      content = -> { capture(&block) } if block_given?
       add_instruction_to_area name, :push, content
     end
 
@@ -185,7 +185,7 @@ module NestiveRendering
     # @param [String] content
     #   Optionally provide a String of content, instead of a block. A block will take precedence.
     def prepend(name, content=nil, &block)
-      content = capture(&block) if block_given?
+      content = -> { capture(&block) } if block_given?
       add_instruction_to_area name, :unshift, content
     end
 
@@ -206,7 +206,7 @@ module NestiveRendering
     # @param [String] content
     #   Optionally provide a String of content, instead of a block. A block will take precedence.
     def replace(name, content=nil, &block)
-      content = capture(&block) if block_given?
+      content = -> { capture(&block) } if block_given?
       add_instruction_to_area name, :replace, [content]
     end
 
@@ -255,6 +255,8 @@ module NestiveRendering
         @_area_for.fetch(name, []).reverse_each do |method_name, content|
           output.public_send method_name, content
         end
+      end.map do |content|
+        content.respond_to?(:call) ?  content.call : content
       end.join.html_safe
     end
 

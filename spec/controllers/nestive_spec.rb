@@ -54,6 +54,12 @@ describe NestiveController do
       get :replace
       assert_select '#some-area', 'replaced'
     end
+
+    it 'does not call the original/replaced area' do
+      expect(DummyClass).not_to receive(:content)
+      get :replace
+      assert_select '#another-area', 'replaced content'
+    end
   end
 
   context '#purge' do
